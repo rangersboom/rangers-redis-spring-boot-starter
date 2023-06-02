@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.rangers.redis</groupId>
+    <artifactId>rangers-redis-spring-boot-starter</artifactId>
+    <version>1.0.0</version>
+
+    <name>rangers-redis-spring-boot-starter</name>
+    <description>rangers-redis-spring-boot-starter</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <version.alibaba.fastjson>1.2.68</version.alibaba.fastjson>
+        <version.apache.commons.lang3>3.10</version.apache.commons.lang3>
+        <version.apache.commons.collections4>4.4</version.apache.commons.collections4>
+        <version.apache.commons.io>2.8.0</version.apache.commons.io>
+        <version.lombok>1.18.12</version.lombok>
+        <version.springboot>2.1.2.RELEASE</version.springboot>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${version.alibaba.fastjson}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${version.apache.commons.lang3}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${version.apache.commons.collections4}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${version.apache.commons.io}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${version.lombok}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${version.springboot}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <!-- 配置发布到仓库 -->
+    <!--<distributionManagement>
+        <repository>
+            <id>caplike-releases</id>
+            <name>caplike releases repo</name>
+            <url>http://repos.caplike.cn/repository/caplike-releases/</url>
+        </repository>
+        &lt;!&ndash; version 带有 SNAPSHOT 会部署到这个仓库 &ndash;&gt;
+        <snapshotRepository>
+            <id>caplike-snapshots</id>
+            <name>caplike snapshots repo</name>
+            <url>http://repos.caplike.cn/repository/caplike-snapshots/</url>
+            &lt;!&ndash; 是否分配包含时间戳的构建号 &ndash;&gt;
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>-->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
